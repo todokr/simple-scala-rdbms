@@ -12,8 +12,8 @@ case class Select(
 ) extends Ast
 
 sealed trait SqlValue
-case class Column(name: String) extends SqlValue
-case class Expression(function: SqlFunction, column: Column) extends SqlValue
+case class Value(name: String) extends SqlValue
+case class Expression(function: SqlFunction, value: Value) extends SqlValue
 
 trait SqlFunction
 
